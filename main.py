@@ -75,7 +75,7 @@ async def check(item):
     proxy = f"{item['ip']}:{item['port']}:{item['user']}:{item['pass']}"
     status = str()
     problem = None
-    # proxy = "http://admin:chigurh@116.202.81.208:10192"
+    
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get('http://142.93.171.79:3000/test', proxy=prox, timeout=10) as response:
@@ -145,7 +145,6 @@ async def controller(list):
 async def main():
     await asyncio.gather(googlesheet())
 
-# http://admin:chigurh@95.217.88.74:20172
 if __name__ == '__main__':
     asyncio.run(main())
     # asyncio.run(main())

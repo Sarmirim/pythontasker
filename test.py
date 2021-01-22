@@ -35,7 +35,6 @@ async def make_requests(list):
         results = await asyncio.gather(*tasks)
 
 async def check(prox: str, session: ClientSession):
-    # proxy = "http://admin:chigurh@116.202.81.208:10192"
     try:
         async with session.get('http://142.93.171.79:3000/test', proxy=prox, timeout=30) as response:
             print(await response.json())
